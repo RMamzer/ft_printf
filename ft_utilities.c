@@ -6,7 +6,7 @@
 /*   By: rmamzer <rmamzer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 20:10:21 by rmamzer           #+#    #+#             */
-/*   Updated: 2025/05/15 13:43:49 by rmamzer          ###   ########.fr       */
+/*   Updated: 2025/05/15 14:02:22 by rmamzer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	ft_putbase(unsigned long num, unsigned int base, char *str)
 	total += written;
 	return (total);
 }
+
 
 int	ft_putint(long num)
 {
