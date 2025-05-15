@@ -6,7 +6,7 @@
 /*   By: rmamzer <rmamzer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 20:10:21 by rmamzer           #+#    #+#             */
-/*   Updated: 2025/05/14 11:58:04 by rmamzer          ###   ########.fr       */
+/*   Updated: 2025/05/15 13:43:49 by rmamzer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,9 @@ int	ft_putstr(char *str)
 int	ft_putbase(unsigned long num, unsigned int base, char *str)
 {
 	int	total;
-	int	index;
 	int	written;
 
 	total = 0;
-	index = 0;
 	written = 0;
 	if (num > base - 1)
 		total = ft_putbase(num / base, base, str);
@@ -67,10 +65,12 @@ int	ft_putint(long num)
 	if (num < 0)
 	{
 		printsign = write(1, "-", 1);
+		if (printsign == -1)
+			return (-1);
 		num = -num;
 	}
 	printnum = ft_putbase(num, 10, BASE10);
-	if (printnum == -1 || printsign == -1)
+	if (printnum == -1)
 		return (-1);
 	return (printsign + printnum);
 }
